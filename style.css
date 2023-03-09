@@ -1,0 +1,92 @@
+
+/* Estilo general */
+body {
+    background-color: #e0e5ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .calculator {
+    background-color: #e0e5ec;
+    border-radius: 25px;
+    box-shadow: 15px 15px 30px #b5b5b5, 
+                -15px -15px 30px #ffffff;
+    padding: 20px;
+    width: 320px;
+  }
+  
+  /* Estilo del display */
+  .display {
+    background-color: #dfe3eb;
+    border-radius: 15px;
+    box-shadow: inset 10px 10px 20px #c7c7c7, 
+                inset -10px -10px 20px #ffffff;
+    margin-bottom: 10px;
+    padding: 20px;
+    text-align: right;
+  }
+  
+  #result {
+    font-size: 2.5em;
+  }
+  
+  /* Estilo de los botones */
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  button {
+    background-color: #e0e5ec;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px #c7c7c7, 
+                -10px -10px 20px #ffffff;
+    color: #1d1d1d;
+    font-size: 1.5em;
+    outline: none;
+    padding: 15px;
+    margin: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #dfe3eb;
+    box-shadow: 5px 5px 10px #c7c7c7, 
+                -5px -5px 10px #ffffff;
+    cursor: pointer;
+  }
+  
+  /* Estilo de clase para los botones de operación */
+.numerales {
+    background-color: #6e8cf0;
+    color: #000000;
+}
+
+.numerales:hover {
+    background-color: #0e3afd;
+}
+
+  /* Estilo del botón de igual */
+  #equal {
+    background-color: #9c68f0;
+    color: #000000;
+  }
+  
+  #equal:hover {
+    background-color: #9b27fa;
+  }
+  
+  /* Estilo del botón de limpiar */
+  #clear {
+    background-color: #ee8e33;
+    color: #000000;
+  }
+  
+  #clear:hover {
+    background-color: #fa7305;
+  }
+  

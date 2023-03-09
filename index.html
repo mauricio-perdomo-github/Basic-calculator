@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora Neumorfista</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="display" id="result">0</div>
+      <div class="buttons">
+        <div class="row">
+          <button onclick="input(7)">7</button>
+          <button onclick="input(8)">8</button>
+          <button onclick="input(9)">9</button>
+          <button class="numerales" onclick="selectOperator('+')">+</button>
+        </div>
+        <div class="row">
+          <button onclick="input(4)">4</button>
+          <button onclick="input(5)">5</button>
+          <button onclick="input(6)">6</button>
+          <button class="numerales" onclick="selectOperator('-')">-</button>
+        </div>
+        <div class="row">
+          <button onclick="input(1)">1</button>
+          <button onclick="input(2)">2</button>
+          <button onclick="input(3)">3</button>
+          <button class="numerales" onclick="selectOperator('*')">*</button>
+        </div>
+        <div class="row">
+          <button onclick="input(0)">0</button>
+          <button id="clear" onclick="clearInput()">C</button>
+          <button id="equal" onclick="calculate()">=</button>
+          <button class="numerales" onclick="selectOperator('/')">/</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let result = 0;
+      let operator = "";
+      let resetDisplay = false;
+
+      function input(num) {
+        let display = document.getElementById("result");
+
+        if (resetDisplay) {
+          display.innerText = "";
+          resetDisplay = false;
+        }
+
+        if (display.innerText === "0") {
+          display.innerText = num;
+        } else {
+          display.innerText += num;
+        }
+      }
+
+      function clearInput() {
+        document.getElementById("result").innerText = "0";
+        result = 0;
+        operator = "";
+      }
+
+      function calculate() {
+        let display = document.getElementById("result");
+        let inputNum = parseFloat(display.innerText);
+
+        switch (operator) {
+          case "+":
+            result += inputNum;
+            break;
+          case "-":
+            result -= inputNum;
+            break;
+          case "*":
+            result *= inputNum;
+            break;
+          case "/":
+            result /= inputNum;
+            break;
+          default:
+            result = inputNum;
+        }
+
+        display.innerText = result.toString();
+        resetDisplay = true;
+      }
+
+      function selectOperator(selectedOperator) {
+        operator = selectedOperator;
+        let display = document.getElementById("result");
+        result = parseFloat(display.innerText);
+        resetDisplay = true;
+      }
+    </script>
+  </body>
+</html>
